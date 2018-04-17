@@ -13,7 +13,7 @@ const ACTION_UPLOAD_FILE = "uploadfile"
 func UEditor(response http.ResponseWriter, request *http.Request) {
 	var action = request.FormValue("action")
 	if action == ACTION_CONFIG {
-		config(response, request)
+		configData(response, request)
 	} else if action == ACTION_LIST_IMAGE {
 		listImage(response, request)
 	} else if action == ACTION_LIST_FILE {

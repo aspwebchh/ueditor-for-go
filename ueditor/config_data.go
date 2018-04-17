@@ -1,8 +1,14 @@
-{
+package ueditor
+
+import (
+	"net/http"
+)
+
+const CONFIG_JSON = `{
   "imageActionName": "uploadimage",
   "imageUrlPrefix": "",
   "imageFieldName": "upfile",
-  "imageMaxSize": 10240000,
+  "imageMaxSize": 20480000,
   "imageAllowFiles": [
     ".png",
     ".jpg",
@@ -112,4 +118,9 @@
     ".md",
     ".xml"
   ]
+}
+`
+
+func configData(response http.ResponseWriter, request *http.Request) {
+	response.Write([]byte(CONFIG_JSON))
 }
